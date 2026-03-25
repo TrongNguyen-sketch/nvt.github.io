@@ -85,3 +85,43 @@ function sendOrderToZalo() {
     text += "\nTổng cộng: " + document.getElementById('total-amount').innerText;
     window.open(`https://zalo.me{SDT_ZALO}?text=${encodeURIComponent(text)}`, '_blank');
 }
+// KIỂM TRA FORM LIÊN HỆ (VALIDATION)
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let isValid = true;
+
+        const name = document.getElementById('contactName');
+        const email = document.getElementById('contactEmail');
+        const msg = document.getElementById('contactMsg');
+
+        // Hàm xóa thông báo lỗi cũ
+        document.querySelectorAll('.error-msg').forEach(el => el.innerText = '');
+
+        // 1. Kiểm tra Tên
+        if (name.value.trim() === "") {
+            name.nextElementSibling.innerText = "Vui lòng nhập họ tên của bạn!";
+            isValid = false;
+        }
+
+        // 2. Kiểm tra Email
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email.value)) {
+            email.nextElementSibling.innerText = "Email không đúng định dạng!";
+            isValid = false;
+        }
+
+        // 3. Kiểm tra Nội dung
+        if (msg.value.trim().length < 10) {
+            msg.nextElementSibling.innerText = "Lời nhắn phải có ít nhất 10 ký tự!";
+            isValid = false;
+        }
+
+        if (isValid) {
+            showToast("🚀 Cảm ơn bạn! Lời nhắn đã được gửi thành công.");
+            contactForm.reset();
+        }
+    });
+}
