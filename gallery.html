@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | NVT FASHION</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
+</head>
+<body>
+    <!-- MENU CHUẨN ĐÃ CĂN GIỮA -->
+    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 25px 10%; background: #fff; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #eee;">
+        <div class="logo" style="flex: 1; font-size: 22px; font-weight: 900; letter-spacing: -1.5px; text-transform: uppercase;">NVT.<span>FASHION</span></div>
+        <div class="main-menu" style="flex: 2; display: flex; justify-content: center; gap: 30px; align-items: center;">
+            <a href="index.html" style="text-decoration: none; color: #888; font-size: 13px; font-weight: 900; text-transform: uppercase;">TRANG CHỦ</a>
+            <a href="about.html" style="text-decoration: none; color: #888; font-size: 13px; font-weight: 900; text-transform: uppercase;">GIỚI THIỆU</a>
+            <a href="services.html" style="text-decoration: none; color: #888; font-size: 13px; font-weight: 900; text-transform: uppercase;">DỊCH VỤ</a>
+            <a href="gallery.html" style="text-decoration: none; color: #000; font-size: 13px; font-weight: 900; text-transform: uppercase;">BỘ SƯU TẬP</a>
+            <a href="contact.html" style="text-decoration: none; color: #888; font-size: 13px; font-weight: 900; text-transform: uppercase;">LIÊN HỆ</a>
+        </div>
+        <div style="flex: 1; display: flex; justify-content: flex-end;">
+            <div class="cart-btn-black" onclick="toggleCart()" style="background: #000; color: #fff; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 12px; display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-bag-shopping"></i><span>MY CART</span><span id="cart-count" style="background:#ff4757; padding:1px 6px; border-radius:4px">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <header style="padding: 80px 10% 40px 10%; text-align: center;">
+        <h1 style="font-size: 80px; font-weight: 900; letter-spacing: -5px; line-height: 0.9;">LOOKBOOK<br><span>SUMMER 2026</span></h1>
+        <p style="color: #666; margin-top: 20px; font-size: 18px;">Khám phá những khoảnh khắc nghệ thuật đằng sau mỗi bộ trang phục.</p>
+    </header>
+
+    <!-- LƯỚI ẢNH NGHỆ THUẬT -->
+    <section class="gallery-grid" style="padding: 40px 10%; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); grid-auto-rows: 400px; gap: 20px;">
+        <div style="grid-row: span 2;"><img src="https://images.unsplash.com" style="width:100%; height:100%; object-fit:cover; border-radius:4px;"></div>
+        <div><img src="https://images.unsplash.com" style="width:100%; height:100%; object-fit:cover; border-radius:4px;"></div>
+        <div style="grid-row: span 2;"><img src="https://images.unsplash.com" style="width:100%; height:100%; object-fit:cover; border-radius:4px;"></div>
+        <div><img src="https://images.unsplash.com" style="width:100%; height:100%; object-fit:cover; border-radius:4px;"></div>
+        <div style="grid-column: span 2;"><img src="https://images.unsplash.com" style="width:100%; height:100%; object-fit:cover; border-radius:4px;"></div>
+    </section>
+
+    <footer style="text-align: center; padding: 50px; background: #000; color: #fff; margin-top: 100px;">&copy; 2026 NVT FASHION.</footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
 
