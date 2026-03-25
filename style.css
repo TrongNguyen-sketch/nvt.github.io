@@ -1,267 +1,74 @@
-/* 1. THIẾT LẬP CHUNG */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Inter', sans-serif;
-    scroll-behavior: smooth;
+@import url('https://fonts.googleapis.com');
+
+:root {
+    --primary: #000;
+    --accent: #0066ff; /* Màu xanh tech giống trong ảnh */
+    --bg: #fff;
+    --text: #000;
 }
 
-body {
-    background: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
 
-/* 2. THANH ĐIỀU HƯỚNG (NAVBAR) */
+body { background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+/* NAVBAR MINIMAL */
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 8%;
-    background: #fff;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 30px 10%; background: #fff; position: sticky; top: 0; z-index: 1000;
+}
+.logo { font-size: 20px; font-weight: 900; letter-spacing: -1px; }
+.cart-icon { font-size: 22px; cursor: pointer; position: relative; }
+#cart-count { 
+    position: absolute; top: -10px; right: -15px; background: var(--accent); 
+    color: #fff; font-size: 10px; padding: 3px 7px; border-radius: 50%; 
 }
 
-.logo {
-    font-size: 26px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-.logo span {
-    color: #ff4757;
-}
-
-.cart-icon {
-    position: relative;
-    font-size: 24px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.cart-icon:hover {
-    color: #ff4757;
-}
-
-#cart-count {
-    position: absolute;
-    top: -8px;
-    right: -12px;
-    background: #ff4757;
-    color: #fff;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 2px 7px;
-    border-radius: 50%;
-    border: 2px solid #fff;
-}
-
-/* 3. BANNER CHÍNH (HERO) */
+/* HERO SECTION - GIỐNG TRONG ẢNH BẠN GỬI */
 .hero {
-    height: 500px;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-    url('https://images.unsplash.com');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    text-align: center;
+    padding: 100px 10% 60px 10%;
+    background: #fff;
 }
-
 .hero h1 {
-    font-size: 50px;
-    margin-bottom: 15px;
-    font-weight: 700;
+    font-size: 80px; /* Chữ siêu to */
+    line-height: 0.9;
+    font-weight: 900;
+    letter-spacing: -4px;
+    margin-bottom: 30px;
 }
-
-.hero button {
-    padding: 15px 40px;
-    background: #ff4757;
-    color: white;
-    border: none;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 30px;
-    transition: 0.3s;
+.hero h1 span { color: var(--accent); }
+.hero p { font-size: 18px; color: #666; max-width: 500px; margin-bottom: 40px; }
+.hero .btn-main {
+    padding: 18px 35px; background: #000; color: #fff; border: none;
+    font-weight: bold; border-radius: 50px; cursor: pointer; transition: 0.3s;
 }
+.hero .btn-main:hover { transform: translateY(-5px); background: var(--accent); }
 
-.hero button:hover {
-    background: #fff;
-    color: #ff4757;
-    transform: scale(1.05);
-}
-
-/* 4. DANH SÁCH SẢN PHẨM */
-.products {
-    padding: 60px 8%;
-}
-
-.products h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 32px;
-    position: relative;
-}
-
+/* PRODUCT GRID - SẠCH SẼ & HIỆN ĐẠI */
+.products { padding: 40px 10%; }
 .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;
 }
-
 .product-card {
-    background: #fff;
-    padding: 15px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    transition: 0.4s;
+    position: relative; transition: 0.5s; cursor: pointer;
 }
-
-.product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-}
-
 .product-card img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 15px;
+    width: 100%; height: 450px; object-fit: cover; 
+    border-radius: 0px; /* Để vuông cho chất */
+    transition: 0.5s;
 }
-
-.product-card h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #222;
-}
-
-.product-card p {
-    color: #ff4757;
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 15px;
-}
-
+.product-card:hover img { filter: grayscale(1); }
+.product-card h3 { margin-top: 15px; font-size: 22px; font-weight: 700; }
+.product-card p { color: var(--accent); font-weight: bold; font-size: 18px; margin-top: 5px; }
 .add-to-cart {
-    width: 100%;
-    padding: 12px;
-    background: #222;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s;
+    margin-top: 15px; padding: 12px 0; width: 100%; border: 1px solid #000;
+    background: none; font-weight: bold; cursor: pointer; transition: 0.3s;
 }
+.add-to-cart:hover { background: #000; color: #fff; }
 
-.add-to-cart:hover {
-    background: #ff4757;
-}
-
-/* 5. GIỎ HÀNG (MODAL) */
+/* GIỎ HÀNG MODAL */
 .cart-modal {
-    position: fixed;
-    top: 0;
-    right: -100%; /* Mặc định ẩn sang phải */
-    width: 380px;
-    height: 100%;
-    background: #fff;
-    box-shadow: -10px 0 30px rgba(0,0,0,0.2);
-    z-index: 2000;
-    transition: 0.5s ease-in-out;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
+    position: fixed; top: 0; right: -100%; width: 400px; height: 100%;
+    background: #fff; z-index: 2000; transition: 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+    padding: 40px; box-shadow: -10px 0 50px rgba(0,0,0,0.1);
 }
-
-.cart-modal.active {
-    right: 0; /* Hiện ra khi có class active */
-}
-
-.cart-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #f4f4f4;
-    padding-bottom: 15px;
-}
-
-.close-cart {
-    font-size: 30px;
-    cursor: pointer;
-    color: #999;
-}
-
-.cart-items {
-    flex: 1;
-    overflow-y: auto;
-    margin: 20px 0;
-}
-
-.cart-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
-}
-
-.cart-item img {
-    width: 70px;
-    height: 70px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.cart-item h4 { font-size: 16px; margin-bottom: 5px; }
-
-.cart-footer {
-    border-top: 2px solid #f4f4f4;
-    padding-top: 20px;
-}
-
-.total-price {
-    font-size: 22px;
-    font-weight: 700;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.zalo-btn {
-    width: 100%;
-    padding: 18px;
-    background: #0068ff;
-    color: #fff;
-    border: none;
-    border-radius: 12px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-.zalo-btn:hover {
-    background: #0056d2;
-}
-
-/* 6. RESPONSIVE (CHO ĐIỆN THOẠI) */
-@media (max-width: 480px) {
-    .cart-modal { width: 100%; }
-    .hero h1 { font-size: 32px; }
-    nav { padding: 15px 5%; }
-}
+.cart-modal.active { right: 0; }
