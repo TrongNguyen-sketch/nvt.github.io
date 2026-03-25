@@ -3,34 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liên Hệ Với Chúng Tôi</title>
+    <title>NVT Fashion Shop</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Thêm icon từ FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
 </head>
 <body>
-    <div class="container">
-        <form id="contactForm" class="contact-form">
-            <h2>Gửi Lời Nhắn <i class="fa-paper-plane far"></i></h2>
-            
-            <div class="input-group">
-                <input type="text" id="name" placeholder="Họ và tên" autocomplete="off">
-                <small class="error-msg"></small>
-            </div>
+    <!-- Thanh điều hướng -->
+    <nav>
+        <div class="logo">NVT <span>FASHION</span></div>
+        <div class="cart-icon">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span id="cart-count">0</span>
+        </div>
+    </nav>
 
-            <div class="input-group">
-                <input type="email" id="email" placeholder="Email liên hệ" autocomplete="off">
-                <small class="error-msg"></small>
-            </div>
+    <!-- Banner chính -->
+    <header class="hero">
+        <h1>BST MÙA HÈ 2026</h1>
+        <p>Phong cách mới - Đẳng cấp mới</p>
+        <button>Khám phá ngay</button>
+    </header>
 
-            <div class="input-group">
-                <textarea id="message" rows="5" placeholder="Nội dung tin nhắn..."></textarea>
-                <small class="error-msg"></small>
+    <!-- Danh sách sản phẩm -->
+    <section class="products">
+        <h2>Sản Phẩm Mới Nhất</h2>
+        <div class="product-grid" id="product-list">
+            <!-- Sản phẩm 1 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com" alt="Áo thun">
+                <h3>Áo Thun Oversize</h3>
+                <p>250.000đ</p>
+                <button class="add-to-cart">Thêm vào giỏ</button>
             </div>
+            <!-- Sản phẩm 2 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com" alt="Áo khoác">
+                <h3>Áo Khoác Bomber</h3>
+                <p>550.000đ</p>
+                <button class="add-to-cart">Thêm vào giỏ</button>
+            </div>
+            <!-- Sản phẩm 3 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com" alt="Quần Jean">
+                <h3>Quần Jean Slimfit</h3>
+                <p>420.000đ</p>
+                <button class="add-to-cart">Thêm vào giỏ</button>
+            </div>
+        </div>
+    </section>
 
-            <button type="submit" id="submitBtn">Gửi Ngay <i class="fa-solid fa-arrow-right"></i></button>
-        </form>
-    </div>
     <script src="script.js"></script>
 </body>
 </html>
+
