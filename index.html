@@ -8,19 +8,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
 </head>
 <body>
-    <nav>
-        <a href="services.html">DỊCH VỤ</a> 
-        <div class="logo">NVT.<span>FASHION</span></div>
-        <div class="main-menu" style="display: flex; gap: 20px; font-weight: 700; font-size: 13px;">
+    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 25px 10%; background: #fff; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #eee;">
+    
+    <!-- 1. LOGO BÊN TRÁI -->
+    <div class="logo" style="font-size: 22px; font-weight: 900; letter-spacing: -1.5px; text-transform: uppercase;">
+        NVT.<span>FASHION</span>
+    </div>
+    
+    <!-- 2. MENU Ở GIỮA (Gộp tất cả vào đây) -->
+    <div class="main-menu" style="display: flex; gap: 30px; font-weight: 700; font-size: 13px;">
         <a href="index.html" style="text-decoration: none; color: #000;">TRANG CHỦ</a>
         <a href="about.html" style="text-decoration: none; color: #888;">GIỚI THIỆU</a>
+        <a href="services.html" style="text-decoration: none; color: #888;">DỊCH VỤ</a>
     </div>
-        <div class="cart-btn-black" onclick="toggleCart()">
-            <i class="fa-solid fa-cart-arrow-down"></i>
-            <span>MY CART</span>
-            <span id="cart-count">0</span>
-        </div>
-    </nav>
+
+    <!-- 3. GIỎ HÀNG BÊN PHẢI -->
+    <div class="cart-btn-black" onclick="toggleCart()" style="background: #000; color: #fff; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 13px; display: flex; align-items: center; gap: 10px;">
+        <i class="fa-solid fa-cart-arrow-down"></i>
+        <span>MY CART</span>
+        <span id="cart-count" style="background: #ff4757; color: #fff; padding: 1px 7px; border-radius: 4px;">0</span>
+    </div>
+</nav>
 
     <header class="hero">
         <h1>Đừng nói bạn đẹp.<br>Hãy <span>chứng minh</span><br>bằng phong cách.</h1>
