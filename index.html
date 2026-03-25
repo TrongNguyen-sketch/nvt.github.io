@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NVT FASHION | Đẳng cấp phong cách</title>
+    <title>NVT FASHION | Style Concept</title>
+    <!-- Link CSS -->
     <link rel="stylesheet" href="style.css">
+    <!-- Icon FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
 </head>
 <body>
 
+    <!-- THANH ĐIỀU HƯỚNG -->
     <nav>
         <div class="logo">NVT.FASHION</div>
-        <!-- GIỎ HÀNG MÀU ĐEN RÕ RÀNG -->
         <div class="cart-btn-black" onclick="toggleCart()">
             <i class="fa-solid fa-bag-shopping"></i>
             <span>GIỎ HÀNG</span>
@@ -19,32 +21,53 @@
         </div>
     </nav>
 
+    <!-- PHẦN BANNER CHÍNH (HERO) -->
     <header class="hero">
         <h1>Đừng nói bạn đẹp.<br>Hãy <span>chứng minh</span><br>bằng phong cách.</h1>
         <p>BST 2026 lấy cảm hứng từ sự tối giản và sức mạnh của công nghệ. Đẹp, chất và khác biệt trong từng đường kim mũi chỉ.</p>
         <button class="btn-main" onclick="window.location.href='#product-list'">KHÁM PHÁ BST</button>
     </header>
 
+    <!-- DANH SÁCH SẢN PHẨM -->
     <section class="products" id="product-list">
         <div class="product-grid">
+            
             <!-- Sản phẩm 1 -->
             <div class="product-card">
-                <img src="https://images.unsplash.com" alt="Áo thun">
+                <a href="detail.html?id=1">
+                    <img src="https://images.unsplash.com" alt="Áo thun">
+                </a>
                 <div class="p-info">
                     <h3>Áo Thun Source Code</h3>
                     <p>350.000đ</p>
                     <button class="add-to-cart">THÊM VÀO GIỎ</button>
                 </div>
             </div>
+
             <!-- Sản phẩm 2 -->
             <div class="product-card">
-                <img src="https://images.unsplash.com" alt="Quần Jean">
+                <a href="detail.html?id=2">
+                    <img src="https://images.unsplash.com" alt="Quần Jean">
+                </a>
                 <div class="p-info">
                     <h3>Quần Jean Dark-Mode</h3>
                     <p>620.000đ</p>
-                    <button class="add-to-cart">THÊM vào GIỎ</button>
+                    <button class="add-to-cart">THÊM VÀO GIỎ</button>
                 </div>
             </div>
+
+            <!-- Sản phẩm 3 -->
+            <div class="product-card">
+                <a href="detail.html?id=3">
+                    <img src="https://images.unsplash.com" alt="Áo khoác">
+                </a>
+                <div class="p-info">
+                    <h3>Áo Khoác Bomber</h3>
+                    <p>550.000đ</p>
+                    <button class="add-to-cart">THÊM VÀO GIỎ</button>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -52,15 +75,26 @@
     <div class="cart-modal" id="cartModal">
         <div class="cart-header">
             <h2>Giỏ hàng của bạn</h2>
-            <span style="cursor:pointer; font-size:30px" onclick="toggleCart()">×</span>
+            <span style="cursor:pointer; font-size:35px" onclick="toggleCart()">×</span>
         </div>
-        <div id="cart-items-list" style="margin-top:20px; flex:1; overflow-y:auto"></div>
+        
+        <div id="cart-items-list" style="margin-top:20px; flex:1; overflow-y:auto">
+            <!-- Sản phẩm sẽ hiện ở đây -->
+        </div>
+
         <div class="cart-footer">
-            <h3>Tổng cộng: <span id="total-amount">0đ</span></h3>
-            <button class="zalo-btn" onclick="sendOrderToZalo()">GỬI ĐƠN QUA ZALO</button>
+            <div style="display:flex; justify-content:space-between; margin-bottom:20px">
+                <span style="font-weight:700">TỔNG CỘNG:</span>
+                <span id="total-amount" style="font-weight:900; color:#ff4757">0đ</span>
+            </div>
+            <button class="zalo-btn" onclick="sendOrderToZalo()">
+                <i class="fa-solid fa-comment"></i> GỬI ĐƠN QUA ZALO
+            </button>
         </div>
     </div>
 
+    <!-- Script điều khiển -->
     <script src="script.js"></script>
+
 </body>
 </html>
