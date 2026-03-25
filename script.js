@@ -1,43 +1,20 @@
-const form = document.getElementById('contactForm');
-const inputs = form.querySelectorAll('input, textarea');
+let count = 0;
+const cartCountElement = document.getElementById('cart-count');
+const buttons = document.querySelectorAll('.add-to-cart');
 
-// Hàm hiển thị lỗi
-const showError = (input, message) => {
-    const group = input.parentElement;
-    const errorText = group.querySelector('.error-msg');
-    input.classList.add('invalid');
-    errorText.innerText = message;
-};
-
-// Hàm xóa lỗi
-const showSuccess = (input) => {
-    const group = input.parentElement;
-    const errorText = group.querySelector('.error-msg');
-    input.classList.remove('invalid');
-    errorText.innerText = '';
-};
-
-// Kiểm tra Email hợp lệ
-const isValidEmail = email => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    let isFormValid = true;
-
-    inputs.forEach(input => {
-        if (input.value.trim() === '') {
-            showError(input, `${input.placeholder} không được để trống`);
-            isFormValid = false;
-        } else if (input.type === 'email' && !isValidEmail(input.value)) {
-            showError(input, 'Email không đúng định dạng');
-            isFormValid = false;
-        } else {
-            showSuccess(input);
-        }
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        count++;
+        cartCountElement.innerText = count;
+        
+        // Hiệu ứng thông báo nhỏ
+        button.innerText = "Đã thêm ✅";
+        button.style.background = "#2ed573";
+        
+        setTimeout(() => {
+            button.innerText = "Thêm vào giỏ";
+            button.style.background = "#333";
+        }, 1000);
     });
-
-    if (isFormValid) {
-        alert('🚀 Tin nhắn đã được gửi thành công!');
-        form.reset();
-    }
 });
+
