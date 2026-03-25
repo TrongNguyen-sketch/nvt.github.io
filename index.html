@@ -3,107 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NVT Fashion Shop | Cửa Hàng Thời Trang</title>
-    <!-- Link CSS -->
+    <title>NVT FASHION | Đừng chỉ mặc đẹp</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Icon FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
-    <!-- Font chữ hiện đại -->
-    <link href="https://fonts.googleapis.com" rel="stylesheet">
 </head>
 <body>
-
-    <!-- THANH ĐIỀU HƯỚNG (NAVBAR) -->
     <nav>
-        <div class="logo">NVT <span>FASHION</span></div>
+        <div class="logo">NVT.FASHION</div>
         <div class="cart-icon" onclick="toggleCart()">
-            <i class="fa-solid fa-bag-shopping"></i>
+            <i class="fa-solid fa-cart-shopping"></i>
             <span id="cart-count">0</span>
         </div>
     </nav>
 
-    <!-- BANNER CHÍNH (HERO) -->
     <header class="hero">
-        <h1>BST MÙA HÈ 2026</h1>
-        <p>Khẳng định phong cách riêng của bạn</p>
-        <a href="#product-list" style="text-decoration: none;">
-            <button style="cursor: pointer;">Mua Sắm Ngay</button>
-        </a>
+        <h1>Đừng nói bạn đẹp.<br>Hãy <span>chứng minh</span><br>bằng phong cách.</h1>
+        <p>BST 2026 lấy cảm hứng từ sự tối giản và sức mạnh của mã nguồn code. Đẹp, chất và khác biệt.</p>
+        <button class="btn-main">KHÁM PHÁ BST</button>
     </header>
 
-    <!-- DANH SÁCH SẢN PHẨM -->
-    <section class="products" id="product-list">
-        <h2>Sản Phẩm Nổi Bật</h2>
+    <section class="products">
         <div class="product-grid">
-            
-            <!-- Sản phẩm 1 -->
             <div class="product-card">
-                <a href="detail.html?id=1">
-                    <img src="https://images.unsplash.com" alt="Áo thun">
-                </a>
-                <h3>Áo Thun Oversize</h3>
-                <p>250.000đ</p>
-                <button class="add-to-cart">Thêm vào giỏ</button>
+                <img src="https://images.unsplash.com" alt="Tech Shirt">
+                <h3>Áo Thun Source Code</h3>
+                <p>350.000đ</p>
+                <button class="add-to-cart">MUA NGAY</button>
             </div>
-
-            <!-- Sản phẩm 2 -->
             <div class="product-card">
-                <a href="detail.html?id=2">
-                    <img src="https://images.unsplash.com" alt="Quần Jean">
-                </a>
-                <h3>Quần Jean Slimfit</h3>
-                <p>420.000đ</p>
-                <button class="add-to-cart">Thêm vào giỏ</button>
+                <img src="https://images.unsplash.com" alt="Tech Pant">
+                <h3>Quần Jean Dark-Mode</h3>
+                <p>620.000đ</p>
+                <button class="add-to-cart">MUA NGAY</button>
             </div>
-
-            <!-- Sản phẩm 3 -->
-            <div class="product-card">
-                <a href="detail.html?id=3">
-                    <img src="https://images.unsplash.com" alt="Áo khoác">
-                </a>
-                <h3>Áo Khoác Bomber</h3>
-                <p>550.000đ</p>
-                <button class="add-to-cart">Thêm vào giỏ</button>
-            </div>
-
-            <!-- Sản phẩm 4 -->
-            <div class="product-card">
-                <a href="detail.html?id=4">
-                    <img src="https://images.unsplash.com" alt="Áo Polo">
-                </a>
-                <h3>Áo Polo Classic</h3>
-                <p>320.000đ</p>
-                <button class="add-to-cart">Thêm vào giỏ</button>
-            </div>
-
         </div>
     </section>
 
-    <!-- GIỎ HÀNG (SIDEBAR ẨN) -->
+    <!-- Giỏ hàng tương tự file cũ bạn chỉ cần giữ nguyên logic ở file script.js -->
     <div class="cart-modal" id="cartModal">
-        <div class="cart-header">
-            <h3>Giỏ hàng của bạn</h3>
-            <span class="close-cart" onclick="toggleCart()">×</span>
-        </div>
-        
-        <div class="cart-items" id="cart-items-list">
-            <!-- Sản phẩm khách chọn sẽ tự hiện ở đây qua JavaScript -->
-        </div>
-
-        <div class="cart-footer">
-            <div class="total-price">Tổng cộng: <span id="total-amount">0đ</span></div>
-            <button class="zalo-btn" onclick="sendOrderToZalo()">
-                <i class="fa-solid fa-comment"></i> Gửi Đơn Qua Zalo
-            </button>
-        </div>
+        <h2>Giỏ hàng</h2><br>
+        <div id="cart-items-list"></div>
+        <button class="btn-main" style="width:100%; margin-top:20px;" onclick="sendOrderToZalo()">GỬI ĐƠN ZALO</button>
+        <p onclick="toggleCart()" style="text-align:center; margin-top:20px; cursor:pointer">Đóng lại</p>
     </div>
 
-    <!-- Nút quay lại đầu trang -->
-    <a href="#" style="position: fixed; bottom: 20px; right: 20px; color: #333; font-size: 24px;">
-        <i class="fa-solid fa-circle-up"></i>
-    </a>
-
-    <!-- Link JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
