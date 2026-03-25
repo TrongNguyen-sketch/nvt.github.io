@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ Với Chúng Tôi</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Thêm icon từ FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
+</head>
+<body>
+    <div class="container">
+        <form id="contactForm" class="contact-form">
+            <h2>Gửi Lời Nhắn <i class="fa-paper-plane far"></i></h2>
+            
+            <div class="input-group">
+                <input type="text" id="name" placeholder="Họ và tên" autocomplete="off">
+                <small class="error-msg"></small>
+            </div>
+
+            <div class="input-group">
+                <input type="email" id="email" placeholder="Email liên hệ" autocomplete="off">
+                <small class="error-msg"></small>
+            </div>
+
+            <div class="input-group">
+                <textarea id="message" rows="5" placeholder="Nội dung tin nhắn..."></textarea>
+                <small class="error-msg"></small>
+            </div>
+
+            <button type="submit" id="submitBtn">Gửi Ngay <i class="fa-solid fa-arrow-right"></i></button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
