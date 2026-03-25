@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .detail-container { display: flex; padding: 50px 10%; gap: 50px; background: white; margin-top: 20px; border-radius: 15px; }
+        .detail-img { flex: 1; }
+        .detail-img img { width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .detail-info { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+        .detail-info h1 { font-size: 32px; color: #333; }
+        .price { font-size: 24px; color: #ff4757; font-weight: bold; }
+        .description { line-height: 1.6; color: #666; }
+        .size-btn { padding: 10px 20px; border: 1px solid #ddd; background: none; cursor: pointer; margin-right: 10px; border-radius: 5px; }
+        .size-btn:hover { border-color: #333; background: #333; color: white; }
+        .back-btn { display: inline-block; margin-bottom: 20px; color: #333; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">NVT <span>FASHION</span></div>
+        <a href="index.html" class="back-btn">← Quay lại trang chủ</a>
+    </nav>
+
+    <div class="detail-container">
+        <div class="detail-img">
+            <img id="p-img" src="" alt="">
+        </div>
+        <div class="detail-info">
+            <h1 id="p-name">Tên sản phẩm</h1>
+            <p class="price" id="p-price">0đ</p>
+            <p class="description" id="p-desc">Đây là mô tả chi tiết cho sản phẩm của shop NVT. Chất liệu vải cao cấp, thấm hút mồ hôi tốt, phù hợp cho cả đi làm và đi chơi.</p>
+            
+            <div>
+                <p><strong>Chọn Size:</strong></p><br>
+                <button class="size-btn">M</button>
+                <button class="size-btn">L</button>
+                <button class="size-btn">XL</button>
+            </div>
+
+            <button class="add-to-cart" style="padding: 15px; font-size: 18px;">MUA NGAY</button>
+        </div>
+    </div>
+
+    <script>
+        // Dữ liệu giả lập cho các sản phẩm
+        const products = {
+            "1": { name: "Áo Thun Oversize", price: "250.000đ", img: "anh-ao-cua-ban.jpg", desc: "Áo thun 100% cotton, không xù lông." },
+            "2": { name: "Quần Jean Slimfit", price: "420.000đ", img: "anh-quan-cua-ban.jpg", desc: "Quần jean co giãn 4 chiều, dáng cực chuẩn." }
+        };
+
+        // Lấy ID từ URL (ví dụ: detail.html?id=1)
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+
+        if (products[productId]) {
+            document.getElementById('p-name').innerText = products[productId].name;
+            document.getElementById('p-price').innerText = products[productId].price;
+            document.getElementById('p-img').src = products[productId].img;
+            document.getElementById('p-desc').innerText = products[productId].desc;
+        }
+    </script>
+</body>
+</html>
