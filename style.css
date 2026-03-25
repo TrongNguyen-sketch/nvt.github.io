@@ -11,65 +11,57 @@ nav {
 .logo { font-size: 22px; font-weight: 900; letter-spacing: -1.5px; text-transform: uppercase; }
 .logo span { color: #ff4757; }
 
-/* NÚT GIỎ HÀNG KIỂU NGHỆ */
+/* NÚT GIỎ HÀNG ĐEN */
 .cart-btn-black {
-    background: #000; color: #fff; padding: 12px 25px; border-radius: 8px; /* Bo góc nhẹ nhìn sang hơn */
-    display: flex; align-items: center; gap: 10px; cursor: pointer; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    font-weight: 700; font-size: 13px; letter-spacing: 1px;
+    background: #000; color: #fff; padding: 12px 25px; border-radius: 8px;
+    display: flex; align-items: center; gap: 10px; cursor: pointer; transition: 0.4s;
+    font-weight: 700; font-size: 13px;
 }
-.cart-btn-black:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 #cart-count { background: #ff4757; color: #fff; padding: 1px 7px; border-radius: 4px; font-weight: 900; }
 
-/* HERO CHỮ SIÊU ĐẬM */
+/* HERO CHỮ SIÊU TO */
 .hero { padding: 100px 10% 60px 10%; }
 .hero h1 { font-size: 90px; line-height: 0.82; font-weight: 900; letter-spacing: -6px; margin-bottom: 35px; }
 .hero h1 span { color: #ff4757; }
-.hero p { font-size: 18px; color: #777; max-width: 500px; margin-bottom: 45px; line-height: 1.5; }
+.hero p { font-size: 18px; color: #777; max-width: 500px; margin-bottom: 45px; }
 
-/* NÚT BẤM "NGHỆ" (CÓ HIỆU ỨNG TRƯỢT MÀU) */
+/* NÚT BẤM NGHỆ THUẬT */
 .btn-main, .add-to-cart {
-    padding: 20px 45px; 
-    background: #000; 
-    color: #fff; 
-    border: 2px solid #000;
-    font-weight: 900; 
-    font-size: 14px;
-    border-radius: 4px; /* Bo góc vuông vức kiểu High-end */
-    cursor: pointer; 
-    position: relative;
-    overflow: hidden;
-    transition: 0.4s;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    padding: 18px 40px; background: #000; color: #fff; border: 2px solid #000;
+    font-weight: 900; font-size: 14px; border-radius: 4px; cursor: pointer;
+    transition: 0.4s; text-transform: uppercase; letter-spacing: 2px;
 }
-
 .btn-main:hover, .add-to-cart:hover {
-    background: transparent;
-    color: #000;
-    transform: translateY(-5px);
+    background: transparent; color: #000; transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
-/* DANH SÁCH SẢN PHẨM */
+/* PHẦN SẢN PHẨM - CHỈNH ẢNH THẲNG HÀNG */
 .products { padding: 100px 10%; background: #fff; }
-.products h2 { text-align: center; font-size: 45px; font-weight: 900; margin-bottom: 60px; letter-spacing: -3px; }
 .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; }
-.product-card { border-radius: 0px; transition: 0.5s; position: relative; }
-.product-card img { width: 100%; height: 450px; object-fit: cover; transition: 0.6s; filter: grayscale(0.2); }
-.product-card:hover img { filter: grayscale(0); transform: scale(1.02); }
+.product-card { transition: 0.5s; }
+
+/* THẦN CHÚ GIÚP ẢNH KHÔNG BỊ LỆCH */
+.product-card img { 
+    width: 100%; 
+    height: 450px; /* Chiều cao cố định cho tất cả ảnh */
+    object-fit: cover; /* Tự cắt cúp ảnh cho vừa khung */
+    object-position: center; 
+    background: #f0f0f0; 
+    display: block;
+    transition: 0.6s;
+}
+.product-card:hover img { transform: scale(1.03); }
+
 .p-info { padding: 30px 0; text-align: left; }
-.p-info h3 { font-size: 24px; font-weight: 900; margin-bottom: 8px; letter-spacing: -1px; }
+.p-info h3 { font-size: 22px; font-weight: 900; margin-bottom: 8px; }
 .p-info p { color: #ff4757; font-weight: 700; font-size: 20px; margin-bottom: 25px; }
 
-/* MODAL GIỎ HÀNG */
+/* GIỎ HÀNG */
 .cart-modal {
     position: fixed; top: 0; right: -100%; width: 450px; height: 100%;
     background: #fff; z-index: 2000; transition: 0.6s cubic-bezier(0.77, 0, 0.175, 1);
     padding: 50px; box-shadow: -20px 0 60px rgba(0,0,0,0.1); display: flex; flex-direction: column;
 }
 .cart-modal.active { right: 0; }
-.zalo-btn {
-    width: 100%; padding: 22px; background: #000; color: #fff; border: none;
-    font-weight: 900; cursor: pointer; margin-top: 30px; letter-spacing: 2px;
-}
-.zalo-btn:hover { background: #0068ff; }
+.zalo-btn { width: 100%; padding: 22px; background: #000; color: #fff; border: none; font-weight: 900; cursor: pointer; margin-top: 30px; }
