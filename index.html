@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NVT FASHION | Official Store</title>
+    <title>NVT FASHION | Red Edition</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
 </head>
 <body>
-
     <nav>
         <div class="logo">NVT.<span>FASHION</span></div>
         <div class="cart-btn-black" onclick="toggleCart()">
@@ -20,14 +19,13 @@
 
     <header class="hero">
         <h1>Đừng nói bạn đẹp.<br>Hãy <span>chứng minh</span><br>bằng phong cách.</h1>
-        <p>BST 2026: Đưa công nghệ vào thời trang tối giản. Khẳng định bản sắc cá nhân trong từng đường kim mũi chỉ.</p>
+        <p>BST 2026: Đưa công nghệ vào thời trang tối giản. Khẳng định bản sắc cá nhân.</p>
         <button class="btn-main" onclick="window.location.href='#product-list'">KHÁM PHÁ NGAY</button>
     </header>
 
     <section class="products" id="product-list">
         <h2>NEW ARRIVALS 2026</h2>
         <div class="product-grid">
-            <!-- 12 Sản phẩm -->
             <div class="product-card"><img src="https://images.unsplash.com"><div class="p-info"><h3>Áo Thun Oversize</h3><p>250.000đ</p><button class="add-to-cart">THÊM VÀO GIỎ</button></div></div>
             <div class="product-card"><img src="https://images.unsplash.com"><div class="p-info"><h3>Quần Jean Slimfit</h3><p>420.000đ</p><button class="add-to-cart">THÊM VÀO GIỎ</button></div></div>
             <div class="product-card"><img src="https://images.unsplash.com"><div class="p-info"><h3>Áo Khoác Bomber</h3><p>550.000đ</p><button class="add-to-cart">THÊM VÀO GIỎ</button></div></div>
@@ -47,11 +45,10 @@
         <div class="cart-header"><h2>GIỎ HÀNG</h2><span style="cursor:pointer; font-size:40px" onclick="toggleCart()">×</span></div>
         <div id="cart-items-list" style="flex:1; overflow-y:auto; margin:20px 0;"></div>
         <div class="cart-footer">
-            <div style="display:flex; justify-content:space-between; margin-bottom:20px; font-weight:900"><span>TỔNG:</span><span id="total-amount">0đ</span></div>
-            <button class="zalo-btn" onclick="sendOrderToZalo()"><i class="fa-solid fa-comment"></i> GỬI ĐƠN QUA ZALO</button>
+            <div style="display:flex; justify-content:space-between; margin-bottom:20px; font-weight:900"><span>TỔNG:</span><span id="total-amount" style="color:#ff4757">0đ</span></div>
+            <button class="zalo-btn" onclick="sendOrderToZalo()">GỬI ĐƠN QUA ZALO</button>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
