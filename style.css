@@ -1,70 +1,61 @@
 @import url('https://fonts.googleapis.com');
 
-:root {
-    --primary: #000;
-    --accent: #ff4757; /* Màu đỏ thương hiệu */
-    --bg: #ffffff;
-}
-
 * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+body { background: #fff; color: #000; overflow-x: hidden; }
 
-body { background: var(--bg); color: #000; }
-
-/* NAVBAR XỊN */
+/* NAVBAR */
 nav {
     display: flex; justify-content: space-between; align-items: center;
     padding: 25px 10%; background: #fff; position: sticky; top: 0; z-index: 1000;
     border-bottom: 1px solid #eee;
 }
+.logo { font-size: 22px; font-weight: 900; letter-spacing: -1px; }
 
-.logo { font-size: 24px; font-weight: 900; letter-spacing: -1px; }
-
-/* CHỖ GIỎ HÀNG LÀM RÕ HƠN */
-.cart-icon { 
-    background: #000; color: #fff; padding: 10px 20px; border-radius: 50px;
+/* NÚT GIỎ HÀNG ĐEN RÕ RÀNG */
+.cart-btn-black {
+    background: #000; color: #fff; padding: 12px 25px; border-radius: 50px;
     display: flex; align-items: center; gap: 10px; cursor: pointer; transition: 0.3s;
+    font-weight: 700; font-size: 14px;
 }
-.cart-icon:hover { background: var(--accent); transform: scale(1.05); }
-#cart-count { background: #fff; color: #000; padding: 2px 8px; border-radius: 20px; font-weight: 900; font-size: 14px; }
+.cart-btn-black:hover { transform: scale(1.05); background: #333; }
+#cart-count { background: #fff; color: #000; padding: 2px 8px; border-radius: 20px; font-weight: 900; }
 
-/* HERO CHỮ SIÊU TO (GIỐNG ẢNH MẪU) */
-.hero {
-    padding: 120px 10% 80px 10%; text-align: left; background: #fff;
-    animation: fadeInUp 1s ease;
-}
+/* HERO CHỮ SIÊU TO */
+.hero { padding: 100px 10% 60px 10%; }
 .hero h1 {
-    font-size: 85px; font-weight: 900; line-height: 0.85; letter-spacing: -5px; margin-bottom: 25px;
+    font-size: 85px; line-height: 0.85; font-weight: 900; letter-spacing: -5px; margin-bottom: 30px;
 }
-.hero h1 span { color: var(--accent); }
-.hero p { font-size: 20px; color: #666; max-width: 600px; margin-bottom: 40px; }
-
-/* NÚT MUA SẮM */
+.hero h1 span { color: #0066ff; }
+.hero p { font-size: 18px; color: #666; max-width: 550px; margin-bottom: 40px; }
 .btn-main {
-    padding: 20px 45px; background: #000; color: #fff; border: none;
-    font-size: 18px; font-weight: 900; border-radius: 0; cursor: pointer; transition: 0.3s;
-}
-.btn-main:hover { background: var(--accent); transform: skewX(-10deg); }
-
-/* SẢN PHẨM RÕ RÀNG */
-.products { padding: 80px 10%; background: #fafafa; }
-.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; }
-.product-card { background: #fff; padding: 0; transition: 0.5s; border: 1px solid #eee; }
-.product-card:hover { border-color: #000; box-shadow: 20px 20px 0px #000; }
-.product-card img { width: 100%; height: 400px; object-fit: cover; }
-.product-info { padding: 25px; }
-.product-info h3 { font-size: 22px; font-weight: 900; margin-bottom: 10px; }
-.product-info p { font-size: 18px; font-weight: 700; color: var(--accent); }
-
-/* HIỆU ỨNG */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+    padding: 18px 40px; background: #000; color: #fff; border: none;
+    font-weight: bold; border-radius: 50px; cursor: pointer; transition: 0.3s;
 }
 
-/* GIỎ HÀNG TRƯỢT XỊN */
+/* SẢN PHẨM */
+.products { padding: 50px 10%; background: #fbfbfb; }
+.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+.product-card { background: #fff; border: 1px solid #eee; transition: 0.4s; }
+.product-card:hover { border-color: #000; transform: translateY(-5px); }
+.product-card img { width: 100%; height: 400px; object-fit: cover; background: #eee; }
+.p-info { padding: 20px; }
+.p-info h3 { font-size: 20px; font-weight: 900; margin-bottom: 10px; }
+.p-info p { color: #0066ff; font-weight: 700; margin-bottom: 15px; }
+.add-to-cart {
+    width: 100%; padding: 12px; border: 1px solid #000; background: none;
+    font-weight: bold; cursor: pointer; transition: 0.3s;
+}
+.add-to-cart:hover { background: #000; color: #fff; }
+
+/* MODAL GIỎ HÀNG */
 .cart-modal {
-    position: fixed; top: 0; right: -100%; width: 450px; height: 100%;
-    background: #fff; z-index: 2000; transition: 0.6s cubic-bezier(0.85, 0, 0.15, 1);
-    padding: 50px; box-shadow: -20px 0 60px rgba(0,0,0,0.1);
+    position: fixed; top: 0; right: -100%; width: 400px; height: 100%;
+    background: #fff; z-index: 2000; transition: 0.5s; padding: 40px;
+    box-shadow: -10px 0 50px rgba(0,0,0,0.1); display: flex; flex-direction: column;
 }
 .cart-modal.active { right: 0; }
+.zalo-btn {
+    width: 100%; padding: 15px; background: #0068ff; color: #fff; border: none;
+    border-radius: 10px; font-weight: bold; cursor: pointer; margin-top: 20px;
+}
+
