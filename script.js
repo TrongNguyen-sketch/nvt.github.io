@@ -1,5 +1,5 @@
 let cart = [];
-const SDT_ZALO = "09xxxxxxxx"; // ⬅️ THAY SỐ ZALO CỦA BẠN VÀO ĐÂY
+const SDT_ZALO = "0374122743"; // ⬅️ THAY SỐ ZALO CỦA BẠN VÀO ĐÂY
 
 function toggleCart() { document.getElementById('cartModal').classList.toggle('active'); }
 
