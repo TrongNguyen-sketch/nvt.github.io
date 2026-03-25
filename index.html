@@ -3,56 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NVT Fashion Shop</title>
+    <title>NVT Fashion Shop | Cửa Hàng Thời Trang</title>
+    <!-- Link CSS -->
     <link rel="stylesheet" href="style.css">
+    <!-- Icon FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
+    <!-- Font chữ hiện đại -->
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
 </head>
 <body>
-    <!-- Thanh điều hướng -->
+
+    <!-- THANH ĐIỀU HƯỚNG (NAVBAR) -->
     <nav>
         <div class="logo">NVT <span>FASHION</span></div>
-        <div class="cart-icon">
+        <div class="cart-icon" onclick="toggleCart()">
             <i class="fa-solid fa-bag-shopping"></i>
             <span id="cart-count">0</span>
         </div>
     </nav>
 
-    <!-- Banner chính -->
+    <!-- BANNER CHÍNH (HERO) -->
     <header class="hero">
         <h1>BST MÙA HÈ 2026</h1>
-        <p>Phong cách mới - Đẳng cấp mới</p>
-        <button>Khám phá ngay</button>
+        <p>Khẳng định phong cách riêng của bạn</p>
+        <a href="#product-list" style="text-decoration: none;">
+            <button style="cursor: pointer;">Mua Sắm Ngay</button>
+        </a>
     </header>
 
-    <!-- Danh sách sản phẩm -->
-    <section class="products">
-        <h2>Sản Phẩm Mới Nhất</h2>
-        <div class="product-grid" id="product-list">
+    <!-- DANH SÁCH SẢN PHẨM -->
+    <section class="products" id="product-list">
+        <h2>Sản Phẩm Nổi Bật</h2>
+        <div class="product-grid">
+            
             <!-- Sản phẩm 1 -->
             <div class="product-card">
-                <img src="https://images.unsplash.com" alt="Áo thun">
+                <a href="detail.html?id=1">
+                    <img src="https://images.unsplash.com" alt="Áo thun">
+                </a>
                 <h3>Áo Thun Oversize</h3>
                 <p>250.000đ</p>
                 <button class="add-to-cart">Thêm vào giỏ</button>
             </div>
+
             <!-- Sản phẩm 2 -->
             <div class="product-card">
-                <img src="https://images.unsplash.com" alt="Áo khoác">
-                <h3>Áo Khoác Bomber</h3>
-                <p>550.000đ</p>
-                <button class="add-to-cart">Thêm vào giỏ</button>
-            </div>
-            <!-- Sản phẩm 3 -->
-            <div class="product-card">
-                <img src="https://images.unsplash.com" alt="Quần Jean">
+                <a href="detail.html?id=2">
+                    <img src="https://images.unsplash.com" alt="Quần Jean">
+                </a>
                 <h3>Quần Jean Slimfit</h3>
                 <p>420.000đ</p>
                 <button class="add-to-cart">Thêm vào giỏ</button>
             </div>
+
+            <!-- Sản phẩm 3 -->
+            <div class="product-card">
+                <a href="detail.html?id=3">
+                    <img src="https://images.unsplash.com" alt="Áo khoác">
+                </a>
+                <h3>Áo Khoác Bomber</h3>
+                <p>550.000đ</p>
+                <button class="add-to-cart">Thêm vào giỏ</button>
+            </div>
+
+            <!-- Sản phẩm 4 -->
+            <div class="product-card">
+                <a href="detail.html?id=4">
+                    <img src="https://images.unsplash.com" alt="Áo Polo">
+                </a>
+                <h3>Áo Polo Classic</h3>
+                <p>320.000đ</p>
+                <button class="add-to-cart">Thêm vào giỏ</button>
+            </div>
+
         </div>
     </section>
 
+    <!-- GIỎ HÀNG (SIDEBAR ẨN) -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3>Giỏ hàng của bạn</h3>
+            <span class="close-cart" onclick="toggleCart()">×</span>
+        </div>
+        
+        <div class="cart-items" id="cart-items-list">
+            <!-- Sản phẩm khách chọn sẽ tự hiện ở đây qua JavaScript -->
+        </div>
+
+        <div class="cart-footer">
+            <div class="total-price">Tổng cộng: <span id="total-amount">0đ</span></div>
+            <button class="zalo-btn" onclick="sendOrderToZalo()">
+                <i class="fa-solid fa-comment"></i> Gửi Đơn Qua Zalo
+            </button>
+        </div>
+    </div>
+
+    <!-- Nút quay lại đầu trang -->
+    <a href="#" style="position: fixed; bottom: 20px; right: 20px; color: #333; font-size: 24px;">
+        <i class="fa-solid fa-circle-up"></i>
+    </a>
+
+    <!-- Link JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
-
