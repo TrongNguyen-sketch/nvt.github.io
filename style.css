@@ -131,5 +131,27 @@ footer .logo { color: #fff; margin-bottom: 20px; }
     border-color: #ff4757 !important;
     transition: 0.3s;
 }
+/* THANH THÔNG BÁO TỰ ẨN */
+.toast-msg {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: #000;
+    color: #fff;
+    padding: 15px 30px;
+    font-weight: 900;
+    font-size: 14px;
+    border-radius: 4px;
+    z-index: 9999;
+    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    letter-spacing: 1px;
+}
+
+.toast-msg.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
 
 
