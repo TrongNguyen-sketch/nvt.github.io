@@ -124,4 +124,12 @@ footer {
 
 /* Fix logo trong footer cho trắng lên */
 footer .logo { color: #fff; margin-bottom: 20px; }
+/* Nút xóa trong giỏ hàng */
+#cart-items-list span:hover {
+    background: #ff4757;
+    color: #fff !important;
+    border-color: #ff4757 !important;
+    transition: 0.3s;
+}
+
 
