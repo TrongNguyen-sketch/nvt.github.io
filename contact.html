@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ | NVT FASHION</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
+</head>
+<body>
+    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 25px 10%; background: #fff; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #eee;">
+        <div class="logo" style="font-size: 22px; font-weight: 900; letter-spacing: -1.5px; text-transform: uppercase;">NVT.<span>FASHION</span></div>
+        <div class="main-menu" style="display: flex; gap: 30px; font-weight: 700; font-size: 13px;">
+            <a href="index.html" style="text-decoration: none; color: #888;">TRANG CHỦ</a>
+            <a href="about.html" style="text-decoration: none; color: #888;">GIỚI THIỆU</a>
+            <a href="contact.html" style="text-decoration: none; color: #000;">LIÊN HỆ</a>
+        </div>
+    </nav>
+
+    <section style="padding: 100px 10%; display: grid; grid-template-columns: 1fr 1fr; gap: 80px;">
+        <div>
+            <h1 style="font-size: 70px; font-weight: 900; letter-spacing: -4px; line-height: 0.9; margin-bottom: 30px;">LIÊN HỆ<br><span>VỚI NVT</span></h1>
+            <p style="color: #666; margin-bottom: 40px; font-size: 18px;">Bạn có câu hỏi? Đừng ngần ngại gửi lời nhắn cho chúng tôi. Đội ngũ NVT sẽ phản hồi bạn trong vòng 24 giờ.</p>
+            <div style="line-height: 2;">
+                <p><b>Địa chỉ:</b> 123 Đường Fashion, Quận 1, TP.HCM</p>
+                <p><b>Hotline:</b> 09xx xxx xxx</p>
+                <p><b>Email:</b> nvt.fashion@gmail.com</p>
+            </div>
+        </div>
+
+        <!-- FORM LIÊN HỆ -->
+        <form id="contactForm" style="display: flex; flex-direction: column; gap: 20px;">
+            <div class="input-group">
+                <input type="text" id="contactName" placeholder="Họ và tên của bạn" style="width: 100%; padding: 20px; border: 2px solid #000; font-weight: 700; border-radius: 4px;">
+                <small class="error-msg" style="color: #ff4757; font-weight: 700; display: block; margin-top: 5px;"></small>
+            </div>
+            <div class="input-group">
+                <input type="email" id="contactEmail" placeholder="Email liên hệ" style="width: 100%; padding: 20px; border: 2px solid #000; font-weight: 700; border-radius: 4px;">
+                <small class="error-msg" style="color: #ff4757; font-weight: 700; display: block; margin-top: 5px;"></small>
+            </div>
+            <div class="input-group">
+                <textarea id="contactMsg" rows="5" placeholder="Nội dung lời nhắn..." style="width: 100%; padding: 20px; border: 2px solid #000; font-weight: 700; border-radius: 4px;"></textarea>
+                <small class="error-msg" style="color: #ff4757; font-weight: 700; display: block; margin-top: 5px;"></small>
+            </div>
+            <button type="submit" class="btn-main" style="width: 100%; padding: 20px; background: #000; color: #fff; border: none; font-weight: 900; border-radius: 4px; cursor: pointer;">GỬI LỜI NHẮN</button>
+        </form>
+    </section>
+
+    <footer style="text-align: center; padding: 50px; background: #000; color: #fff; margin-top: 100px;">&copy; 2026 NVT FASHION.</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
