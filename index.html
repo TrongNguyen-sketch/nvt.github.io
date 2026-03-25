@@ -1,52 +1,29 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NVT FASHION | Đừng chỉ mặc đẹp</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
-</head>
-<body>
-    <nav>
-        <div class="logo">NVT.FASHION</div>
-        <div class="cart-icon" onclick="toggleCart()">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <span id="cart-count">0</span>
-        </div>
-    </nav>
-
-    <header class="hero">
-        <h1>Đừng nói bạn đẹp.<br>Hãy <span>chứng minh</span><br>bằng phong cách.</h1>
-        <p>BST 2026 lấy cảm hứng từ sự tối giản và sức mạnh của mã nguồn code. Đẹp, chất và khác biệt.</p>
-        <button class="btn-main">KHÁM PHÁ BST</button>
-    </header>
-
-    <section class="products">
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="https://images.unsplash.com" alt="Tech Shirt">
-                <h3>Áo Thun Source Code</h3>
-                <p>350.000đ</p>
-                <button class="add-to-cart">MUA NGAY</button>
-            </div>
-            <div class="product-card">
-                <img src="https://images.unsplash.com" alt="Tech Pant">
-                <h3>Quần Jean Dark-Mode</h3>
-                <p>620.000đ</p>
-                <button class="add-to-cart">MUA NGAY</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Giỏ hàng tương tự file cũ bạn chỉ cần giữ nguyên logic ở file script.js -->
-    <div class="cart-modal" id="cartModal">
-        <h2>Giỏ hàng</h2><br>
-        <div id="cart-items-list"></div>
-        <button class="btn-main" style="width:100%; margin-top:20px;" onclick="sendOrderToZalo()">GỬI ĐƠN ZALO</button>
-        <p onclick="toggleCart()" style="text-align:center; margin-top:20px; cursor:pointer">Đóng lại</p>
+<nav>
+    <div class="logo">NVT.FASHION</div>
+    <div class="cart-icon" onclick="toggleCart()">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span>GIỎ HÀNG</span>
+        <span id="cart-count">0</span>
     </div>
+</nav>
 
-    <script src="script.js"></script>
-</body>
-</html>
+<header class="hero">
+    <h1>BST MÙA HÈ<br><span>2026</span><br>FASHION.</h1>
+    <p>Phong cách không chỉ là những gì bạn mặc, mà là cách bạn thể hiện bản thân với thế giới.</p>
+    <button class="btn-main">KHÁM PHÁ NGAY</button>
+</header>
+
+<section class="products">
+    <div class="product-grid">
+        <!-- Một sản phẩm mẫu -->
+        <div class="product-card">
+            <img src="https://images.unsplash.com" alt="">
+            <div class="product-info">
+                <h3>Áo Thun Oversize</h3>
+                <p>250.000đ</p>
+                <button class="add-to-cart" style="margin-top:20px; width:100%; padding:10px; cursor:pointer">THÊM VÀO GIỎ</button>
+            </div>
+        </div>
+        <!-- Thêm các sản phẩm khác tương tự ở đây -->
+    </div>
+</section>
